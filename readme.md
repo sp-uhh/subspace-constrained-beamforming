@@ -1,4 +1,4 @@
-## Weakly Guided Beamformer Parametrization in Higher-Order Ambisonics
-### Jakob Kienegger, Tal Peer, Sina Khanagha, Timo Gerkmann
+## Subspace-Constrained Beamforming
+### Jakob Kienegger, Timo Gerkmann
 
-This repository serves as supplementary material to our work *Weakly Guided and Autoregressive Beamformer Parameterization for Generalizable Moving Speaker Extraction in Higher-Order Ambisonics*.
+This repository serves as supplementary material to our work *Subspace-Constrained Beamforming for joint Direction-Preserving Ambisonics and Minimum-Variance Monaural Enhancement*.

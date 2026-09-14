@@ -9,19 +9,26 @@ export async function renderRecordedDatasetPane() {
 
   const leftDynamic = document.getElementById('left-dynamic');
   leftDynamic.innerHTML = `
-  <h3> Office Recordings </h3>
-  <p class="block-text"> The recordings are conducted in a office/meeting room with a reverberation time of approx. 500ms.
-  We use an Eigenmike em64 to obtain third order ambisonics coefficients for processing.
-  In each recording we enhance the moving target speaker (<span class="legend-dot target-dot"></span>). 
-  To evaluate spatial fidelity, we localize [Nadiri'14] both moving target (<span class="legend-dot target-dot"></span>) and stationary interfering (<span class="legend-dot interferer-dot"></span>) speaker based on the enhanced speech signal (MAE). For monaural enhancement performance, we use omnidirectional decoding and evaluate the transcription of QuartzNet [Kriman'20] via WER.
-  The sound field is rotated to be aligned with the seated interfering speaker and binauralized using a KEMAR HRTF.
-  Smoothed DoA estimates are obtained via the Wrapped Kalman Filter from [Traa'13]
+  <h2> Office meeting recordings </h3>
 
-  </p>
   <p class="block-text">
     <label for="recSelect">Choose recording:</label>
     <select id="recSelect">
     </select>
+  </p>
+
+  <h4> Recording setup </h4>
+  <p class="block-text"> The recordings are conducted in an office/meeting room with a reverberation time of approx. 500ms.
+  We use an Eigenmike em64 to obtain third order ambisonics coefficients for processing. 
+  We rotate the sound scene to be centered at the seated, stationary speaker (<span class="legend-dot interferer-dot"></span>) in each recording.
+  </p>
+
+  <h4> Evaluation setup </h4>
+  <p class="block-text">
+  In each recording we enhance the moving target speaker (<span class="legend-dot target-dot"></span>). 
+  To evaluate spatial fidelity, we localize both moving target (<span class="legend-dot target-dot"></span>) and stationary interfering (<span class="legend-dot interferer-dot"></span>) speaker based on the enhanced speech signal using the DoA estimator of [Nadiri'14]. We compute the localization error (MAE) solely toward the stationary interferer (<span class="legend-dot interferer-dot"></span>). Smoothed DoA estimates are indicated as arrows and obtained via the Wrapped Kalman Filter from [Traa'13].
+  To evaluate monaural enhancement performance, we use omnidirectional decoding and evaluate the transcription of QuartzNet [Kriman'20] via WER.
+  In case of ambisonics-to-ambisonics enhancement, the sound field is binauralized using a KEMAR HRTF.
   </p>
     
   `;
